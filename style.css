@@ -1,0 +1,1134 @@
+/* ==========================================================================
+   Base: variáveis, reset e utilitários globais
+   ========================================================================== */
+
+:root {
+  --background: #060b14;
+  --surface: #0d1725;
+  --blue: #087dff;
+  --cyan: #00d5ff;
+  --white: #f4f8ff;
+  --muted: #9aabc0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--white);
+  font-family: Inter, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Rótulos e destaques de texto */
+.tag,
+.section-label {
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h1 span,
+.section h2 span,
+.final-cta h2 span {
+  color: var(--cyan);
+}
+
+/* Botões */
+.button {
+  display: inline-block;
+  padding: 15px 22px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary {
+  background: linear-gradient(110deg, var(--blue), #00bce8);
+  color: white;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+}
+
+.secondary {
+  border: 1px solid #30445e;
+  color: white;
+}
+/* ==========================================================================
+   Layout: cabeçalho e rodapé
+   ========================================================================== */
+
+/* Cabeçalho */
+.header {
+  min-height: 82px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(6, 11, 20, 0.95);
+  border-bottom: 1px solid #ffffff12;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(15px);
+}
+
+.brand img {
+  width: 500px;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+nav a {
+  color: #c3d0df;
+  font-size: 13px;
+}
+
+.nav-button {
+  background: var(--blue);
+  padding: 12px 19px;
+  border-radius: 7px;
+}
+
+/* Rodapé */
+footer {
+  padding: 30px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-top: 1px solid #1b2b3e;
+}
+
+footer p,
+footer > a:last-child {
+  color: var(--muted);
+  font-size: 11px;
+}
+/* ==========================================================================
+   Seções da página: hero, números, problema, solução, como funciona,
+   benefícios e chamada final
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 650px;
+  padding: 90px 10%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+  background:
+    radial-gradient(circle at 80% 50%, #007dff29, transparent 35%),
+    linear-gradient(120deg, #060b14, #09172a);
+}
+
+.hero h1 {
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1.08;
+  margin: 25px 0;
+  letter-spacing: -2px;
+}
+
+.hero-content > p,
+.solution-text > p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 570px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+.hero-info {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.hero-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.hero-info strong {
+  font-size: 23px;
+}
+
+.hero-info small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* Visual do hero (cartão do sensor) */
+.hero-visual {
+  height: 420px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  border: 1px solid #00d5ff30;
+  border-radius: 50%;
+}
+
+.circle-one {
+  width: 370px;
+  height: 370px;
+}
+
+.circle-two {
+  width: 290px;
+  height: 290px;
+}
+
+.sensor-card {
+  width: 300px;
+  padding: 25px;
+  background: linear-gradient(145deg, #142a43, #091522);
+  border: 1px solid #00d5ff66;
+  border-radius: 18px;
+  box-shadow: 0 25px 80px #0008;
+  position: relative;
+  z-index: 2;
+}
+
+.sensor-top,
+.sensor-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  background: #00e68a;
+  border-radius: 50%;
+}
+
+.sensor-icon {
+  margin-top: 30px;
+  color: var(--cyan);
+  font-size: 60px;
+}
+
+.sensor-card h3 {
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+
+.sensor-card p {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.water-container {
+  height: 12px;
+  background: #263a50;
+  border-radius: 20px;
+  margin: 25px 0;
+  overflow: hidden;
+}
+
+.water-fill {
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  animation: water 3s infinite alternate;
+}
+
+@keyframes water {
+  to {
+    width: 75%;
+  }
+}
+
+/* ---------- Números ---------- */
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 35px 10%;
+  background: #0d1725;
+}
+
+.numbers div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 25px;
+  border-left: 1px solid #2a4059;
+}
+
+.numbers strong {
+  color: var(--cyan);
+  font-size: 24px;
+}
+
+.numbers span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* ---------- Seção genérica ---------- */
+.section {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.section h2,
+.dashboard-heading h2 {
+  font-size: clamp(30px, 4vw, 45px);
+  margin: 20px 0;
+  letter-spacing: -1px;
+}
+
+.section-description {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ---------- Problema ---------- */
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.info-card,
+.step {
+  padding: 30px;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid #1c2d42;
+  border-radius: 12px;
+}
+
+.card-icon {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.info-card h3,
+.step h3 {
+  margin-bottom: 12px;
+}
+
+.info-card p,
+.step p,
+.benefit-grid p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ---------- Solução ---------- */
+.solution {
+  padding: 100px 10%;
+  background: linear-gradient(110deg, #0d1929, #0a2238);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.solution h2 {
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.check-list {
+  list-style: none;
+  margin: 30px 0;
+}
+
+.check-list li {
+  margin: 16px 0;
+  font-size: 13px;
+}
+
+.solution-visual {
+  height: 360px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.big-circle {
+  width: 270px;
+  height: 270px;
+  border: 2px solid var(--cyan);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.inner-circle {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, #087dff, #00c9ed);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle span {
+  font-size: 55px;
+  font-weight: 800;
+}
+
+.inner-circle small {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.floating-label {
+  position: absolute;
+  padding: 13px;
+  background: #142b42;
+  border: 1px solid #31506b;
+  border-radius: 7px;
+  color: var(--cyan);
+  font-size: 9px;
+}
+
+.label-one {
+  top: 35px;
+  right: 0;
+}
+
+.label-two {
+  bottom: 35px;
+  left: 0;
+}
+
+/* ---------- Como funciona ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 50px;
+}
+
+.step-number {
+  color: var(--cyan);
+}
+
+.step-icon {
+  color: var(--cyan);
+  font-size: 35px;
+  margin: 20px 0;
+}
+
+/* ---------- Benefícios ---------- */
+.benefits {
+  background: #080f1a;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: left;
+  margin-top: 50px;
+}
+
+.benefit-grid div {
+  padding: 20px;
+  border-top: 1px solid #29405b;
+}
+
+.benefit-grid span {
+  color: var(--cyan);
+  font-size: 11px;
+}
+
+.benefit-grid h3 {
+  margin: 18px 0 10px;
+}
+
+/* ---------- Chamada final ---------- */
+.final-cta {
+  padding: 100px 10%;
+  text-align: center;
+  background:
+    radial-gradient(circle at center, #007dff38, transparent 55%),
+    #0c192a;
+}
+
+.final-cta h2 {
+  font-size: clamp(32px, 5vw, 52px);
+  margin: 25px 0;
+}
+
+.final-cta p {
+  max-width: 550px;
+  margin: 0 auto 30px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+/* ==========================================================================
+   Central de monitoramento: mapa, barra lateral e painel de leitura
+   ========================================================================== */
+
+.dashboard-section {
+  padding: 90px 7%;
+  background: #0b1523;
+}
+
+.dashboard-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.dashboard-heading p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.demo-badge {
+  font-size: 10px;
+  color: var(--cyan);
+  border: 1px solid #17617b;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.map-dashboard {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  min-height: 620px;
+  background: #081321;
+  border: 1px solid #213951;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* ---------- Barra lateral ---------- */
+.map-sidebar {
+  padding: 22px;
+  background: #0a1726;
+  border-right: 1px solid #20354c;
+}
+
+.map-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 22px;
+}
+
+.map-brand-icon {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #087dff, #00d5ff);
+  font-weight: 800;
+}
+
+.map-brand strong,
+.map-brand small {
+  display: block;
+}
+
+.map-brand strong {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.map-brand small {
+  font-size: 8px;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: 1px;
+}
+
+/* Resumo (contadores) */
+.map-summary {
+  display: grid;
+  gap: 8px;
+}
+
+.summary-card {
+  padding: 11px 13px;
+  background: #101f31;
+  border: 1px solid #22364c;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-card span {
+  font-size: 9px;
+  color: #b8c7d8;
+  letter-spacing: 0.6px;
+}
+
+.summary-card strong {
+  font-size: 19px;
+}
+
+/* Cores de status (resumo e legenda) */
+.danger strong,
+.legend-critical {
+  color: #ff6473;
+}
+
+.warning strong,
+.legend-warning {
+  color: #ffc65c;
+}
+
+.safe strong,
+.legend-normal {
+  color: #00e69a;
+}
+
+/* Busca de endereço */
+.map-label {
+  display: block;
+  font-size: 9px;
+  color: #9aabc0;
+  letter-spacing: 1px;
+  margin: 22px 0 8px;
+}
+
+.search-row {
+  display: flex;
+  gap: 6px;
+}
+
+.search-row input {
+  min-width: 0;
+  width: 100%;
+  padding: 11px;
+  background: #101f31;
+  border: 1px solid #29415a;
+  border-radius: 7px;
+  color: white;
+  outline: none;
+}
+
+.search-row input:focus {
+  border-color: var(--cyan);
+}
+
+.search-row button {
+  width: 42px;
+  border: 0;
+  border-radius: 7px;
+  background: #087dff;
+  color: white;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.search-feedback {
+  font-size: 10px;
+  color: #8fa2b8;
+  margin-top: 7px;
+  line-height: 1.5;
+}
+
+.map-divider {
+  height: 1px;
+  background: #22364c;
+  margin: 18px 0;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  color: #c8d6e6;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.sidebar-title span {
+  color: var(--cyan);
+}
+
+/* Lista de sensores */
+.sensor-list {
+  display: grid;
+  gap: 8px;
+}
+
+.sensor-item {
+  width: 100%;
+  text-align: left;
+  padding: 12px;
+  background: #101f31;
+  border: 1px solid #20364d;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.sensor-item.selected {
+  border-color: var(--cyan);
+  background: #102a40;
+}
+
+.sensor-item strong {
+  display: block;
+  font-size: 11px;
+}
+
+.sensor-item small {
+  display: block;
+  color: #8fa2b8;
+  font-size: 9px;
+  margin-top: 5px;
+}
+
+.sensor-item em {
+  float: right;
+  font-style: normal;
+  font-size: 9px;
+}
+
+/* Filtros e camadas */
+.filter-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+}
+
+.filter-btn,
+.layer-btn {
+  padding: 9px;
+  border: 1px solid #29415a;
+  border-radius: 6px;
+  background: #101f31;
+  color: #b9c9da;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.filter-btn.active,
+.layer-btn.active {
+  background: #0b4770;
+  border-color: #00bce8;
+  color: white;
+}
+
+.sidebar-action {
+  width: 100%;
+  margin-top: 15px;
+  padding: 11px;
+  background: #0d2d49;
+  border: 1px solid #17617b;
+  border-radius: 7px;
+  color: #ccefff;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.map-disclaimer {
+  color: #778da5;
+  font-size: 9px;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+/* ---------- Área do mapa ---------- */
+.map-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-toolbar {
+  height: 55px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d1c2d;
+  border-bottom: 1px solid #213951;
+}
+
+.map-toolbar strong {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.map-toolbar small {
+  font-size: 9px;
+  color: #8fa2b8;
+}
+
+.map-live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00e69a;
+  margin-right: 8px;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.layer-btn {
+  padding: 7px 12px;
+}
+
+#flood-map {
+  height: 520px;
+  min-height: 420px;
+  width: 100%;
+  background: #dbe7ed;
+  z-index: 1;
+}
+
+.map-bottom {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 12px 15px;
+  background: #0d1c2d;
+  font-size: 10px;
+}
+
+.map-bottom small {
+  margin-left: auto;
+  color: #8fa2b8;
+}
+
+/* ---------- Leaflet (ajustes de tema) ---------- */
+.leaflet-container {
+  font-family: Inter, Arial, sans-serif;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #102238;
+  color: #f4f8ff;
+}
+
+.leaflet-popup-content {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.leaflet-popup-content strong {
+  color: #00d5ff;
+}
+
+/* Marcadores dos sensores */
+.sensor-pin {
+  width: 19px;
+  height: 19px;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #0002;
+}
+
+.pin-normal {
+  background: #00c987;
+}
+
+.pin-warning {
+  background: #ffbd45;
+}
+
+.pin-critical {
+  background: #ff5365;
+}
+
+/* ---------- Painel de leitura do sensor ---------- */
+.dashboard {
+  padding: 28px;
+  background: #101f31;
+  border: 1px solid #243c56;
+  border-radius: 15px;
+  margin-top: 22px;
+}
+
+.dashboard-top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #263b52;
+}
+
+.dashboard-top strong,
+.dashboard-top small {
+  display: block;
+}
+
+.dashboard-top small {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.status {
+  color: #00e69a;
+  font-size: 9px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 22px 0;
+}
+
+.metric {
+  padding: 20px;
+  background: #0a1727;
+  border-radius: 9px;
+}
+
+.metric > span {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.metric strong {
+  display: block;
+  font-size: 28px;
+  margin: 12px 0;
+}
+
+.metric small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.green {
+  color: #00e69a;
+}
+
+.progress {
+  height: 7px;
+  background: #263c54;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.progress div {
+  height: 100%;
+  width: 32%;
+  background: var(--cyan);
+  transition: 0.4s;
+}
+
+.alert-box {
+  display: flex;
+  gap: 13px;
+  padding: 16px;
+  background: #00e69a12;
+  border: 1px solid #00e69a40;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.alert-box > span {
+  font-size: 20px;
+  color: #00e69a;
+}
+
+.alert-box p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.update-button {
+  width: 100%;
+}
+
+.disclaimer {
+  color: #8294a9;
+  font-size: 10px;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+/* ==========================================================================
+   Responsivo
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .header {
+    padding: 15px 5%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 70px 7%;
+  }
+
+  .numbers {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .solution {
+    grid-template-columns: 1fr;
+  }
+
+  .steps,
+  .benefit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .map-dashboard {
+    grid-template-columns: 260px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-info {
+    gap: 18px;
+  }
+
+  .hero-info strong {
+    font-size: 19px;
+  }
+
+  .problem-grid,
+  .steps,
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section,
+  .solution,
+  .dashboard-section {
+    padding: 70px 6%;
+  }
+
+  .hero-visual {
+    height: 340px;
+  }
+
+  .circle-one {
+    width: 310px;
+    height: 310px;
+  }
+
+  .circle-two {
+    width: 240px;
+    height: 240px;
+  }
+
+  .map-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .map-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid #20354c;
+  }
+
+  .map-main {
+    min-height: 450px;
+  }
+
+  #flood-map {
+    height: 430px;
+    min-height: 360px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .map-bottom {
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+
+  .map-bottom small {
+    width: 100%;
+    margin: 0;
+  }
+
+  .brand img {
+    width: 180px;
+    height: 55px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flood Sensor: tecnologia inteligente para monitoramento de bueiros e prevenção de alagamentos.">
+  <title>Flood Sensor | Inteligência contra alagamentos</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fontes e Leaflet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+  <!-- ============ Cabeçalho ============ -->
+  <header class="header">
+    <a href="#inicio" class="brand"><img src="flood_sensor_logo.png" alt="Logo Flood Sensor"></a>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#problema">O problema</a>
+      <a href="#solucao">A solução</a>
+      <a href="#monitoramento">Monitoramento</a>
+      <a href="#contato" class="nav-button">Fale conosco</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ Hero ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="tag">TECNOLOGIA • PREVENÇÃO • SEGURANÇA</span>
+        <h1>A tecnologia que <span>antecipa o risco</span> de alagamentos.</h1>
+        <p>Monitoramento inteligente de bueiros para identificar elevações no nível da água e ajudar a prevenir enchentes antes que elas causem grandes problemas.</p>
+        <div class="hero-buttons">
+          <a href="#solucao" class="button primary">Conheça a solução ↗</a>
+          <a href="#monitoramento" class="button secondary">Ver demonstração</a>
+        </div>
+        <div class="hero-info">
+          <div><strong>24/7</strong><small>Monitoramento planejado</small></div>
+          <div><strong>IoT</strong><small>Tecnologia conectada</small></div>
+          <div><strong>Smart</strong><small>Prevenção inteligente</small></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="circle circle-one"></div>
+        <div class="circle circle-two"></div>
+        <div class="sensor-card">
+          <div class="sensor-top"><span class="online-dot"></span><span>SISTEMA DE MONITORAMENTO</span></div>
+          <div class="sensor-icon">⌁</div>
+          <h3>Flood Sensor</h3>
+          <p>Monitoramento de nível de água</p>
+          <div class="water-container"><div class="water-fill"></div></div>
+          <div class="sensor-bottom"><span>TECNOLOGIA INTELIGENTE</span><span>FS-001</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Números ============ -->
+    <section class="numbers">
+      <div><strong>01</strong><span>Identificação do risco</span></div>
+      <div><strong>02</strong><span>Monitoramento contínuo</span></div>
+      <div><strong>03</strong><span>Informação para prevenção</span></div>
+      <div><strong>04</strong><span>Mais segurança urbana</span></div>
+    </section>
+
+    <!-- ============ O problema ============ -->
+    <section class="section problem" id="problema">
+      <div class="section-label">O DESAFIO</div>
+      <h2>Quando a água sobe,<br><span>cada minuto importa.</span></h2>
+      <p class="section-description">Bueiros obstruídos, chuvas intensas e falta de monitoramento podem contribuir para alagamentos. Muitas vezes, o problema só é percebido quando a situação já está crítica.</p>
+
+      <div class="problem-grid">
+        <article class="info-card">
+          <div class="card-icon">🌧</div>
+          <h3>Chuvas intensas</h3>
+          <p>O volume de água pode aumentar rapidamente em períodos de chuva forte.</p>
+        </article>
+        <article class="info-card">
+          <div class="card-icon">⚠</div>
+          <h3>Bueiros obstruídos</h3>
+          <p>Resíduos e sujeira podem dificultar o escoamento da água.</p>
+        </article>
+        <article class="info-card">
+          <div class="card-icon">⌖</div>
+          <h3>Falta de informação</h3>
+          <p>Sem acompanhamento, identificar o risco antecipadamente é mais difícil.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ A solução ============ -->
+    <section class="solution" id="solucao">
+      <div class="solution-text">
+        <div class="section-label">NOSSA SOLUÇÃO</div>
+        <h2>Informação em tempo real para decisões mais inteligentes.</h2>
+        <p>O Flood Sensor propõe a utilização de sensores instalados em pontos estratégicos da rede de drenagem urbana. Eles acompanham o nível da água e permitem identificar situações que podem representar risco de alagamento.</p>
+        <ul class="check-list">
+          <li>✓ Acompanhamento do nível da água</li>
+          <li>✓ Identificação de níveis elevados</li>
+          <li>✓ Possibilidade de envio de alertas</li>
+          <li>✓ Dados para auxiliar a prevenção</li>
+        </ul>
+        <a href="#funcionamento" class="button primary">Entenda como funciona ↗</a>
+      </div>
+
+      <div class="solution-visual">
+        <div class="big-circle">
+          <div class="inner-circle"><span>FS</span><small>SMART SENSOR</small></div>
+        </div>
+        <div class="floating-label label-one">SENSOR INTELIGENTE</div>
+        <div class="floating-label label-two">DADOS E MONITORAMENTO</div>
+      </div>
+    </section>
+
+    <!-- ============ Como funciona ============ -->
+    <section class="section" id="funcionamento">
+      <div class="section-label">COMO FUNCIONA</div>
+      <h2>Da coleta de dados<br><span>à prevenção.</span></h2>
+      <p class="section-description">O projeto utiliza tecnologia para transformar informações do ambiente em dados que podem ajudar na prevenção.</p>
+
+      <div class="steps">
+        <article class="step">
+          <span class="step-number">01</span>
+          <div class="step-icon">⌁</div>
+          <h3>Coleta</h3>
+          <p>O sensor mede o nível da água dentro do bueiro.</p>
+        </article>
+        <article class="step">
+          <span class="step-number">02</span>
+          <div class="step-icon">⌘</div>
+          <h3>Processamento</h3>
+          <p>Os dados são analisados para identificar alterações.</p>
+        </article>
+        <article class="step">
+          <span class="step-number">03</span>
+          <div class="step-icon">⌁</div>
+          <h3>Identificação</h3>
+          <p>Níveis elevados podem indicar uma situação de atenção.</p>
+        </article>
+        <article class="step">
+          <span class="step-number">04</span>
+          <div class="step-icon">♧</div>
+          <h3>Alerta</h3>
+          <p>O sistema poderá informar responsáveis sobre possíveis riscos.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ Central de monitoramento (mapa) ============ -->
+    <section class="dashboard-section" id="monitoramento">
+      <div class="dashboard-heading">
+        <div>
+          <div class="section-label">CENTRAL DE MONITORAMENTO</div>
+          <h2>Mapa de monitoramento</h2>
+          <p>Explore o mapa, consulte os sensores e visualize as condições demonstrativas em Maringá-PR.</p>
+        </div>
+        <span class="demo-badge">● DEMONSTRAÇÃO</span>
+      </div>
+
+      <div class="map-dashboard">
+
+        <!-- Barra lateral -->
+        <aside class="map-sidebar">
+          <div class="map-brand">
+            <span class="map-brand-icon">FS</span>
+            <div><strong>FLOOD SENSOR</strong><small>PAINEL DE CONTROLE</small></div>
+          </div>
+
+          <div class="map-summary">
+            <div class="summary-card danger"><span>ÁREAS CRÍTICAS</span><strong id="count-flood">1</strong></div>
+            <div class="summary-card warning"><span>EM ATENÇÃO</span><strong id="count-warning">1</strong></div>
+            <div class="summary-card safe"><span>NORMAL</span><strong id="count-normal">1</strong></div>
+          </div>
+
+          <label class="map-label" for="sensor-search">LOCALIZAR ENDEREÇO</label>
+          <div class="search-row">
+            <input id="sensor-search" type="search" placeholder="Rua, avenida ou bairro...">
+            <button id="search-location" type="button" aria-label="Buscar endereço">⌕</button>
+          </div>
+          <p class="search-feedback" id="search-feedback">Pesquise um endereço em Maringá.</p>
+
+          <div class="map-divider"></div>
+          <div class="sidebar-title">SENSORES MONITORADOS <span id="sensor-total">03</span></div>
+          <div id="sensor-list" class="sensor-list"></div>
+
+          <div class="map-divider"></div>
+          <div class="sidebar-title">FILTRO DO MAPA</div>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="todos" type="button">Todos</button>
+            <button class="filter-btn" data-filter="critico" type="button">Crítico</button>
+            <button class="filter-btn" data-filter="atencao" type="button">Atenção</button>
+            <button class="filter-btn" data-filter="normal" type="button">Normal</button>
+          </div>
+
+          <button class="sidebar-action" id="center-map" type="button">◎ Centralizar em Maringá</button>
+          <p class="map-disclaimer">Pontos e leituras demonstrativos. Não representam sensores físicos nem alertas oficiais.</p>
+        </aside>
+
+        <!-- Mapa -->
+        <div class="map-main">
+          <div class="map-toolbar">
+            <div>
+              <span class="map-live-dot"></span>
+              <strong>MAPA URBANO</strong>
+              <small> MARINGÁ • PARANÁ</small>
+            </div>
+            <div class="toolbar-actions">
+              <button id="street-layer" class="layer-btn active" type="button">Ruas</button>
+              <button id="satellite-layer" class="layer-btn" type="button">Satélite</button>
+            </div>
+          </div>
+
+          <div id="flood-map" role="application" aria-label="Mapa interativo de Maringá com sensores demonstrativos"></div>
+
+          <div class="map-bottom">
+            <span class="legend-normal">● <b>Normal</b></span>
+            <span class="legend-warning">● <b>Atenção</b></span>
+            <span class="legend-critical">● <b>Crítico</b></span>
+            <small>Mapa © OpenStreetMap</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leitura do sensor selecionado -->
+      <div class="dashboard map-reading">
+        <div class="dashboard-top">
+          <div>
+            <strong>Leitura demonstrativa do sensor selecionado</strong>
+            <small id="selected-sensor-name">FS-001 • Centro</small>
+          </div>
+          <span class="status">SIMULAÇÃO ATIVA</span>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="metric">
+            <span>NÍVEL DA ÁGUA</span>
+            <strong id="water-level">32%</strong>
+            <div class="progress"><div id="water-progress"></div></div>
+            <small id="water-status">Nível normal</small>
+          </div>
+          <div class="metric">
+            <span>STATUS DO SENSOR</span>
+            <strong class="green" id="sensor-status">● Ativo</strong>
+            <small>Funcionamento demonstrativo</small>
+          </div>
+          <div class="metric">
+            <span>ÚLTIMA LEITURA</span>
+            <strong id="last-update">--:--:--</strong>
+            <small>Horário local</small>
+          </div>
+        </div>
+
+        <div class="alert-box" id="alert-box">
+          <span>✓</span>
+          <div>
+            <strong id="alert-title">Monitoramento normal</strong>
+            <p id="alert-description">Nenhuma condição de atenção nesta leitura simulada.</p>
+          </div>
+        </div>
+
+        <button class="button primary update-button" id="update-reading" type="button">Atualizar leitura ↻</button>
+        <p class="disclaimer">* Painel ilustrativo com valores aleatórios. Não está conectado a sensores físicos e não envia alertas reais.</p>
+      </div>
+    </section>
+
+    <!-- ============ Benefícios ============ -->
+    <section class="section benefits">
+      <div class="section-label">IMPACTO DO PROJETO</div>
+      <h2>Tecnologia com propósito.</h2>
+
+      <div class="benefit-grid">
+        <div><span>01 /</span><h3>Prevenção</h3><p>Auxilia na identificação antecipada de possíveis situações de risco.</p></div>
+        <div><span>02 /</span><h3>Agilidade</h3><p>Facilita o acesso às informações sobre as condições dos bueiros.</p></div>
+        <div><span>03 /</span><h3>Segurança</h3><p>Contribui para o planejamento de ações de proteção à população.</p></div>
+        <div><span>04 /</span><h3>Inovação</h3><p>Aplica tecnologia conectada a um desafio das cidades.</p></div>
+      </div>
+    </section>
+
+    <!-- ============ Chamada final ============ -->
+    <section class="final-cta" id="contato">
+      <div class="section-label">FLOOD SENSOR</div>
+      <h2>Uma cidade mais preparada<br>começa com <span>informação.</span></h2>
+      <p>Tecnologia e inovação trabalhando juntas para construir ambientes urbanos mais seguros.</p>
+      <a href="https://api.whatsapp.com/send?phone=5544991740457" class="button primary">Entre em contato ↗</a>
+    </section>
+
+  </main>
+
+  <!-- ============ Rodapé ============ -->
+  <footer>
+    <a href="#inicio" class="logo"><span class="logo-icon">F</span>FLOOD<span>SENSOR</span></a>
+    <p>© 2026 Flood Sensor. Projeto de tecnologia e prevenção.</p>
+    <a href="#inicio">Voltar ao topo ↑</a>
+  </footer>
+
+  <!-- Leaflet e script do site -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
